@@ -69,7 +69,7 @@ p {
   width: 175px;
   height: 40px;
   -webkit-transition: width 1s;
-  transition: width .5s ease-out, background-color 1s ease-in;
+  transition: width 1s ease-in-out, background-color 1s ease-in;
   border-left: 2px solid black;
 }
 
@@ -80,7 +80,7 @@ p {
 
 .name2, .job2, .location2, .education2 {
   position: absolute;
-  right: 325px;
+  right: 330px;
   color: white;
   width: 200px;
   font-weight: bold;
@@ -89,7 +89,40 @@ p {
   padding-right: 25px;
 }
 
+img.pointer {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  top: 40px;
+  left: 70px;
+
+  -webkit-animation-name: point;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: 3;
+  -webkit-animation-play-state: running;
+}
+
 /*Animation*/
+
+@-webkit-keyframes point {
+
+  0% {
+    top: 60px;
+    transform: rotate(45deg)
+  }
+
+  50% {
+    transform: rotate(-45);
+    top: 175px;
+    left: 300px
+  }
+
+  100% {
+    top: 40px;
+  }
+}
 
 /*Mobile*/
 @media (max-width:800px) {
