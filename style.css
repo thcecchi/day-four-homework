@@ -163,7 +163,7 @@ p {
   }
 
   .name2, .job2, .location2, .education2 {
-    color: black;
+    color: white;
     background-color: red;
     opacity: 1;
     position: relative;
