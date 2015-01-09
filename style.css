@@ -15,12 +15,42 @@ section.card {
   transition: background .5s ease;
 }
 
+/*Card Animation*/
+
+@-webkit-keyframes card {
+
+  0% {
+    opacity: .8;
+    color: white;
+  }
+
+  100% {
+    opacity: 1;
+    color: black;
+  }
+}
+
+
 section.card:hover {
   background: white;
+
+  -webkit-animation-name: card;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: none;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-play-state: running;
 }
 
 section.card:hover > ul{
-  opacity: 1;
+
+  -webkit-animation-name: info;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: .5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
 }
 
 section.card:hover > img{
@@ -45,9 +75,20 @@ ul.info {
   vertical-align: top;
   padding-left: 20px;
   opacity: 0;
-  transition: opacity 1s ease-out;
 }
 
+/*Info Animation*/
+
+@-webkit-keyframes info {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 li {
   vertical-align: middle;
@@ -95,12 +136,15 @@ img.pointer {
   position: absolute;
   top: 40px;
   left: 70px;
+  display: none;
+}
 
+img.pointer:hover {
   -webkit-animation-name: point;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 3s;
   -webkit-animation-timing-function: linear;
-  -webkit-animation-delay: 2s;
-  -webkit-animation-iteration-count: 3;
+  -webkit-animation-delay: none;
+  -webkit-animation-iteration-count: 1;
   -webkit-animation-play-state: running;
 }
 
@@ -109,18 +153,22 @@ img.pointer {
 @-webkit-keyframes point {
 
   0% {
-    top: 60px;
+    top: 40px;
     transform: rotate(45deg)
   }
 
-  50% {
+  10% {
+    left: 20px;
+  }
+
+  20%, 50% {
     transform: rotate(-45);
-    top: 175px;
-    left: 300px
+    top: 200px;
+    left: 350px
   }
 
   100% {
-    top: 40px;
+    left: 4000px;
   }
 }
 
@@ -130,5 +178,13 @@ img.pointer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 5px solid white;
+    transition: none;
+    }
+
+  ul.info {
+    width: 10px;
+    padding-left: 50px;
   }
+
 }
