@@ -130,61 +130,58 @@ p {
   padding-right: 25px;
 }
 
-img.pointer {
-  height: 70px;
-  width: 70px;
-  position: absolute;
-  top: 40px;
-  left: 70px;
-  display: none;
-}
-
-img.pointer:hover {
-  -webkit-animation-name: point;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-delay: none;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-play-state: running;
-}
-
-/*Animation*/
-
-@-webkit-keyframes point {
-
-  0% {
-    top: 40px;
-    transform: rotate(45deg)
-  }
-
-  10% {
-    left: 20px;
-  }
-
-  20%, 50% {
-    transform: rotate(-45);
-    top: 200px;
-    left: 350px
-  }
-
-  100% {
-    left: 4000px;
-  }
-}
-
 /*Mobile*/
 @media (max-width:800px) {
   img.photo {
     display: block;
-    margin-left: auto;
+    margin-left: 130px;
     margin-right: auto;
     border: 5px solid white;
-    transition: none;
     }
 
   ul.info {
     width: 10px;
-    padding-left: 50px;
+    margin-left: 120px;
   }
+
+  li {
+    margin-bottom: -100px;
+  }
+
+  .name1, .job1, .location1, .education1 {
+    width: 250px;
+    height: 40px;
+    transition: opacity .5s ease;
+    margin-left: -100px;
+    padding-top: 20px;
+    z-index: 1;
+  }
+
+  .name1:hover, .job1:hover, .location1:hover, .education1:hover {
+    width: 250px;
+    opacity: 0;
+  }
+
+  .name2, .job2, .location2, .education2 {
+    color: black;
+    background-color: red;
+    opacity: 1;
+    position: relative;
+    left: -100px;
+    bottom: 104px;
+    text-align: left;
+    font-weight: bold;
+    width: 225px;
+    height: 23px;
+    border: 2px solid black;
+    z-index: -1;
+    vertical-align: center;
+  }
+
+  .name2:hover, .job2:hover, .location2:hover, .education2:hover {
+
+  }
+
+
 
 }
